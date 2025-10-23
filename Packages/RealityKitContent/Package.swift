@@ -30,7 +30,6 @@ let package = Package(
             resources: [
                 .process("Bamboo.usdz"),
                 .process("Perle.usdz"),
-                .process("Test.usdz")
             ],
             swiftSettings: [
                 .enableUpcomingFeature("MemberImportVisibility")

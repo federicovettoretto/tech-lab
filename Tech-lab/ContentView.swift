@@ -15,10 +15,13 @@ struct Product: Identifiable, Hashable {
 let sampleProducts: [Product] = [
     Product(name: "Bamboo", imageName: "bamboo", entityName: "Bamboo", purchaseURL: URL(string: "https://example.com/prodotto1")),
     Product(name: "Perle", imageName: "perla", entityName: "Perle", purchaseURL: URL(string: "https://example.com/prodotto2")),
-    Product(name: "Test", imageName: "test", entityName: "Test", purchaseURL: URL(string: "https://example.com/prodotto3"))
 ]
 
 struct ContentView: View {
+
+    /// The environment value to get the instance of the `OpenImmersiveSpaceAction` instance.
+    // @Environment(\.openImmersiveSpace) var openImmersiveSpace
+
     @State private var selectedProduct: Product? = nil
     @State private var loadedEntity: Entity? = nil
     @State private var isLoading = false
@@ -187,6 +190,9 @@ struct ContentView: View {
                     entityRotation = 0.0
                     isLoading = false
                 }
+
+                // Open immersive space
+                // await openImmersiveSpace(id: "CarView")
             } catch {
                 await MainActor.run {
                     loadedEntity = nil
