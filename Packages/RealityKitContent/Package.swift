@@ -27,6 +27,11 @@ let package = Package(
         .target(
             name: "RealityKitContent",
             dependencies: [],
+            resources: [
+                .process("Bamboo.usdz"),
+                .process("Perle.usdz"),
+                .process("Test.usdz")
+            ],
             swiftSettings: [
                 .enableUpcomingFeature("MemberImportVisibility")
             ]),
